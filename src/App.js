@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Tab, TabItem, TabList, TabPanel, TabPanels } from "./components/Tab";
 
 function App() {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const handleChange = (newIndex) => {
+      setCurrentIndex(newIndex);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tab currentTab={currentIndex} onChange={handleChange}>
+        <TabList>
+          <TabItem label="Tab 1" index={1}></TabItem>
+          <TabItem label="Tab 2" index={2}></TabItem>
+        </TabList>
+        <TabPanels>
+          <TabPanel index={1}>Panel 1</TabPanel>
+          <TabPanel index={2}>Panel 2</TabPanel>
+        </TabPanels>
+      </Tab>
     </div>
   );
 }

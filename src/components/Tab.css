@@ -1,0 +1,27 @@
+.tab {
+    border: 1px solid rgb(225, 218, 218);
+}
+.tab-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+.tab-item {
+    background-color: red;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+.tab-item.active {
+    background-color: brown;
+}
+.tab-panels {
+    background: #c2c2d2;
+}
+.tab-panel {
+    color: #2015c6;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid darkmagenta;
+}
