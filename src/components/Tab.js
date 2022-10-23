@@ -13,11 +13,11 @@ const Tab = (props) => {
   );
 };
 
-const TabList = ({ children }) => {
+ Tab.TabList = function TabList ({ children })  {
   return <div className="tab-list">{children}</div>;
 };
 
-const TabItem = ({ label, index }) => {
+Tab.TabItem = function TabItem ({ label, index })  {
   const ctx = useContext(TabContext);
   const { currentTab, onChange } = ctx;
   const clickHandler = () => {
@@ -34,11 +34,11 @@ const TabItem = ({ label, index }) => {
   );
 };
 
-const TabPanels = ({ children }) => {
+Tab.TabPanels = function TabPanels ({ children })  {
   return <div className="tab-panels">{children}</div>;
 };
 
-const TabPanel = ({ children, index }) => {
+Tab.TabPanel = function TabPanel({ children, index })  {
   const  ctx  = useContext(TabContext);
   let { currentTab } = ctx;
   return (
@@ -50,4 +50,4 @@ const TabPanel = ({ children, index }) => {
   );
 };
 
-export { Tab, TabItem, TabList, TabPanels, TabPanel, TabContext };
+export default Tab;
